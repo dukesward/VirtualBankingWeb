@@ -1,0 +1,72 @@
+.login-page{
+    height: 100%;
+    background-image: url('../../../src/assets/images/login_back.jpeg');
+    background-size:100%;
+}
+
+.t-btn-default {
+    display: block;
+    width: 80%;
+    margin:1rem auto;
+   // padding-top:2rem;
+  //  padding-bottom:2rem;
+    text-align:center;
+}
+
+.t-login-border{
+    border: solid 1px #ccc;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    width: 80%;
+    margin: auto;
+}
+.t-button-menu{
+    padding: 5rem 0rem;
+    text-align: center;
+}
+
+.t-footer-menu{
+    padding: 1rem 0rem;
+    text-align: center;
+    bottom:2rem;
+    position: absolute;
+    width: 100%;
+}
+.t-input-default{
+    border-radius: 1rem;
+    width: 80%;
+    margin: 1rem 0rem;
+    opacity: 0.5;
+}
+
+.t-login-title{
+    padding:1rem;
+    text-align: center;
+
+}
+
+.t-login-check{
+    width: 80%;
+    text-align: left;
+}
+
+.login-form {
+    max-width: 400px;
+    padding:2rem;
+    
+    display: block;
+    margin: 0 auto;
+  }
+
+  .login-form-forgot {
+    float: right;
+  }
+
+  .login-form-button {
+    width: 100%;
+  }
+
+  .login-body{
+    padding-top: 2rem;
+    background-color: #eeeeee;
+  }
