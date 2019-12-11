@@ -1,0 +1,110 @@
+.welcomebarContainer {
+  padding-bottom: 20px;
+}
+.row {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.bold {
+}
+
+.col-xs-12 {
+  position: relative;
+  min-height: 1px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.col-lg-12 {
+  float: left;
+  width: 100%;
+}
+.account-body {
+  padding: 2rem;
+}
+
+::ng-deep .ant-collapse {
+  background-color: #056dae;
+}
+::ng-deep .ant-collapse-header {
+  line-height: 3rem !important;
+  color: white !important;
+  font-weight: bolder;
+  font-size: 1.5rem !important;
+}
+::ng-deep .ant-collapse-content-box {
+  //
+  padding: 0 !important;
+
+  box-sizing: border-box;
+}
+::ng-deep .anticon-dollar {
+  font-size: 3rem !important;
+}
+.checking-1 {
+  background: white;
+  padding: 2rem !important;
+}
+.paycheck {
+  margin-top: 1rem;
+  background: white;
+  border-radius: 0.1rem;
+  padding: 1rem;
+}
+
+.checking-operate {
+  display: block;
+}
+.checking-operate-1 {
+  float: right;
+  border-right: #056dae 1px solid;
+  padding: 0 1rem;
+  text-decoration: underline;
+  color: #056dae;
+}
+
+.checking-oh {
+  overflow: hidden;
+}
+.checking-operate-2 {
+  float: right;
+  padding: 0 1rem;
+  text-decoration: underline;
+  color: #056dae;
+}
+.checking-detail {
+}
+.checking-fl {
+  float: left;
+}
+
+.blue-bold {
+  color: #056dae;
+  font-weight: bold;
+}
+
+.wd3 {
+  padding: 2rem 6rem 2rem 0;
+}
+
+.amount1 {
+  font-size: 1.9rem;
+  margin-top: 1rem;
+}
+.amount2 {
+  font-size: 1.5rem;
+  margin-top: 1rem;
+}
+.welcomebarContainer {
+  padding: 1rem 2rem 0 2rem;
+}
+
+.checking-2 {
+  padding: 1rem;
+  background: #eee;
+}
+
+.checking-btn {
+  float: right;
+}
