@@ -1,1 +1,62 @@
-<p>account-summary works!</p>
+<div class="welcomebarContainer ">
+  <div class="bgwelcome">
+    Welcome,&nbsp;TROY
+  </div>
+
+  <div>
+    Last sign on:&nbsp;Dec. 09, 2019 (6:30 AM ET)&nbsp;from computer.
+  </div>
+</div>
+<div class="account-body">
+  <div>
+    <nz-collapse>
+      <nz-collapse-panel
+        *ngFor="let panel of panels"
+        [nzHeader]="panel.name"
+        [nzActive]="panel.active"
+        [nzDisabled]="panel.disabled"
+        [nzExtra]="panel.rightheader"
+      >
+        <div class="checking-1">
+          <div class="checking-detail">
+            <div class="checking-oh">
+              <div class="checking-fl blue-bold ">Checking - 7888 ></div>
+              <div class="checking-operate checking-oh">
+                <div class="checking-operate-2">Add Funds</div>
+                <div class="checking-operate-1">Pay a Bill</div>
+                <div class="checking-operate-1">Transfer</div>
+              </div>
+            </div>
+            <div class="checking-oh">
+              <div class="checking-fl wd3">
+                <div>
+                  Avaliable Now <i nz-icon nzType="question-circle"></i>
+                </div>
+                <div class="amount1">$8,107.39</div>
+              </div>
+              <div class="checking-fl wd3">
+                <div>On Deposit <i nz-icon nzType="question-circle"></i></div>
+                <div class="amount2">$8,107.39</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="checking-2">
+          <div>Move your paycheck to your account</div>
+          <div class="paycheck checking-oh">
+            <div class="checking-dollar checking-fl">
+              <i nz-icon nzType="dollar" nzTheme="outline"></i>
+            </div>
+            <div class="paycheck-desc checking-fl">
+              <div>Setup Direct Deposit</div>
+              <div>Quick. Easy. Convenient</div>
+            </div>
+            <div class="checking-btn">
+              <button nz-button nzType="primary">Get Started</button>
+            </div>
+          </div>
+        </div>
+      </nz-collapse-panel>
+    </nz-collapse>
+  </div>
+</div>
