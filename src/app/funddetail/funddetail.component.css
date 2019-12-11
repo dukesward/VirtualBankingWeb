@@ -1,0 +1,46 @@
+.funddetail-body{
+    width: 772px;
+    margin: 0 auto;
+}
+.form-control{
+    width: 320px;
+    margin-bottom: 7px;
+}
+.control-label{
+    margin-bottom: 7px;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+    font-weight: normal;
+}
+.fund-desc p{
+    margin-bottom: 15px;
+}
+.form-group{
+    margin: 0 0 0 -15px;
+}
+.text-size-11{
+    font-size: 11px;
+}
+
+.fund-btn {  
+    color: blue;      
+    background-color: #FFFFFF;  
+    border: 0px none; 
+    /* font-family: "宋体";   */
+    font-size: 15px;  
+    text-decoration:underline;
+}  
+.fund-btn:hover{  
+    color:red;  
+    border: none;  
+    cursor: hand;  
+    cursor: pointer;  
+    text-decoration:underline;
+}  
+.fund-btn:focus {   
+    outline: none;
+}
+.bug-fund-value{
+    margin-top: 5px;
+}
