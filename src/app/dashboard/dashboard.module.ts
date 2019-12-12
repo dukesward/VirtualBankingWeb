@@ -13,6 +13,7 @@ import { PrelopsuccessComponent } from "../prelopsuccess/prelopsuccess.component
 import { NzCollapseModule } from "ng-zorro-antd/collapse";
 import { NzIconModule } from "ng-zorro-antd/icon";
 import { NzButtonModule } from "ng-zorro-antd";
+import { NzToolTipModule } from "ng-zorro-antd/tooltip";
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -30,7 +31,8 @@ import { NzButtonModule } from "ng-zorro-antd";
     DashboardRoutingModule,
     NzCollapseModule,
     NzIconModule,
-    NzButtonModule
+    NzButtonModule,
+    NzToolTipModule
   ]
 })
 export class DashboardModule {}

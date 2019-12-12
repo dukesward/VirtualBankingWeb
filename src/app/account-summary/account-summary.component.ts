@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { AppController } from "../services/app.controller.service";
+import { HttpHeaders } from "@angular/common/http";
+import { AppStore } from "../services/app.store.service";
 
 @Component({
   selector: "app-account-summary",
@@ -7,16 +9,19 @@ import { AppController } from "../services/app.controller.service";
   styleUrls: ["./account-summary.component.scss"]
 })
 export class AccountSummaryComponent implements OnInit {
-  constructor(private appController: AppController) {}
+  constructor(
+    private appController: AppController,
+    private appStore: AppStore
+  ) {}
 
   ngOnInit() {
-    this.appController.get("app_module", "mutualFundSearch").subscribe(
-      data => {
-        console.log("login response: ", data);
-      },
-      error => {
-        console.log("login response: ", error);
-      }
+    const clientId = this.appStore.getValue("clientId");
+    const headers = new HttpHeaders({
+      customerId: clientId
+    });
+    this.appController.get("app_module", "profile", null, headers).subscribe(
+      data => {},
+      error => {}
     );
   }
 
@@ -26,6 +31,13 @@ export class AccountSummaryComponent implements OnInit {
       name: "CHECKING",
       disabled: false,
       rightheader: "Total On Deposit $8107.39"
+    }
+  ];
+  savingpanels = [
+    {
+      active: true,
+      name: "SAVING",
+      disabled: false
     }
   ];
 }

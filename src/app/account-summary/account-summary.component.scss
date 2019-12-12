@@ -22,10 +22,12 @@
 }
 .account-body {
   padding: 2rem;
+  overflow: hidden;
 }
 
 ::ng-deep .ant-collapse {
   background-color: #056dae;
+  margin-bottom: 2rem;
 }
 ::ng-deep .ant-collapse-header {
   line-height: 3rem !important;
@@ -107,4 +109,41 @@
 
 .checking-btn {
   float: right;
+}
+.account {
+  width: 60%;
+  float: left;
+}
+
+.ad {
+  width: 40%;
+  padding: 0 1rem;
+  float: left;
+}
+.ad1 {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px #eee solid;
+}
+.ad1_title {
+  color: #056dae;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.ad1_img {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-position: 50%;
+}
+
+.ad1_img img {
+  width: 100% !important;
+  height: auto;
+  box-shadow: none !important;
+  border-radius: 0;
+}
+.ad1_desc {
+  margin: 1rem 0;
 }
