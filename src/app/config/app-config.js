@@ -16,6 +16,11 @@ exports.appconfig = {
         uri: "/private/v1/customer/profiles",
         http_method: "GET"
       },
+      accounts: {
+        proxy: "http://ec2-18-217-195-82.us-east-2.compute.amazonaws.com",
+        uri: "/private/v1/accounts/all",
+        http_method: "GET"
+      },
       mutualFundSearch: {
         proxy: "http://18.216.37.212:8880",
         uri: "/private/v1/investments/mutualFunds/search"

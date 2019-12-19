@@ -20,9 +20,22 @@ export class AccountSummaryComponent implements OnInit {
       customerId: clientId
     });
     this.appController.get("app_module", "profile", null, headers).subscribe(
-      data => {},
+      data => {
+        console.log("profile: ", data);
+      },
       error => {}
     );
+    const accountsHeaders = new HttpHeaders({
+      clientId: clientId
+    });
+    this.appController
+      .get("app_module", "accounts", null, accountsHeaders)
+      .subscribe(
+        data => {
+          console.log("accounts: ", data);
+        },
+        error => {}
+      );
   }
 
   panels = [
