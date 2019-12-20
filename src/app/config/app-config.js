@@ -16,9 +16,17 @@ exports.appconfig = {
         uri: "/private/v1/customer/profiles",
         http_method: "GET"
       },
+      mutualFundHoldings: {
+        proxy: "http://13.251.177.87:8660",
+        uri: "/private/v1/investments/mutualFunds/{customerNo}/holdings"
+      },
       mutualFundSearch: {
-        proxy: "http://18.216.37.212:8880",
+        proxy: "http://13.251.177.87:8660",
         uri: "/private/v1/investments/mutualFunds/search"
+      },
+      mutualFundBuy: {
+        proxy: "http://13.251.177.87:8660",
+        uri: "/private/v1/investments/mutualFunds/buy"
       }
     }
   }
