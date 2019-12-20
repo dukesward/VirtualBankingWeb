@@ -4,7 +4,8 @@ import { HttpClient } from '@angular/common/http';
 import { FundHouse } from 'src/model/holding/FundHouse';
 import { Fund } from 'src/model/holding/Fund';
 import { Transaction } from 'src/model/transaction/transaction'
-
+import { AppController } from '../services/app.controller.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-funddetail',
@@ -35,7 +36,7 @@ export class FunddetailComponent implements OnInit {
   quantity: 333333;
   consentFlag: boolean;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,private appController: AppController, private router:Router) { }
 
 
   ngOnInit() {
@@ -74,13 +75,28 @@ export class FunddetailComponent implements OnInit {
 
   confirmBugFund() {
     console.log("Transaction==>", this.transaction);
-    this.http.post('/private/v1/investments/mutualFunds/buy', this.transaction).subscribe((res: any) => {
-      console.log("confirm-res==>", res);
+    // this.http.post('http://localhost:8880/private/v1/investments/mutualFunds/buy', this.transaction).subscribe((res: any) => {
+    //   console.log("confirm-res==>", res);
+    //   if (res.responseCode == 0) {
+    //     console.log('buy done...');
+    //     //this.showList();
+    //   }
+    // });
+
+    this.appController.post("app_module","mutualFundBuy",this.transaction).subscribe(
+      res=>{
+        console.log("confirm-res==>", res);
       if (res.responseCode == 0) {
         console.log('buy done...');
         //this.showList();
+        this.router.navigateByUrl('/holdings');
+        console.log('router...');
       }
-    });
+      },
+      error=>{
+        console.log("buy error....");
+      }
+    );
   }
   // showList() {
   //   throw new Error("Method not implemented.");
@@ -88,8 +104,34 @@ export class FunddetailComponent implements OnInit {
 
   getSearchResp() {
 
-    this.http.get('/private/v1/investments/mutualFunds/search').subscribe((res: SearchResp) => {
-      this.dataList = res.data;
+    // this.http.get('http://localhost:8880/private/v1/investments/mutualFunds/search').subscribe((res: SearchResp) => {
+    //   this.dataList = res.data;
+    //   console.log("search==>", res.data);
+    //   //const companys = [];
+    //   this.dataList.forEach(element => {
+    //     if (this.companys.length == 0) {
+    //       this.companys.push(element.fundHouse);
+    //       this.funds.push(element);
+    //     }
+    //     let flag = false;
+    //     for (var i = 0; i < this.companys.length; i++) {
+    //       if (this.companys[i].code != element.fundHouse.code) {
+    //         flag = true;
+    //       } else {
+    //         flag = false;
+    //       }
+    //     }
+    //     if (flag) {
+    //       this.companys.push(element.fundHouse);
+    //       this.funds.push(element);
+    //     }
+    //   });
+    // });
+    console.log('companys==>', this.companys);
+
+    this.appController.get("app_module","mutualFundSearch").subscribe(
+      res=>{
+        this.dataList = res.data;
       console.log("search==>", res.data);
       //const companys = [];
       this.dataList.forEach(element => {
@@ -110,10 +152,11 @@ export class FunddetailComponent implements OnInit {
           this.funds.push(element);
         }
       });
-    });
-    console.log('companys==>', this.companys);
-
-
+      },
+      error=>{
+        console.log("search error...");
+      }
+    );
   }
   changeType(fundcode) {
     console.log('change type==>', fundcode);
