@@ -1,9 +1,11 @@
 .buy-title{
     color: red;
+    margin-top: 8px;
 }
 
 .buy-body{
     margin-left: 20px;
+    width: fit-content;
 }
 .buy-table-title{
     background-color: #056dae;

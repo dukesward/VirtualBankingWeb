@@ -20,7 +20,7 @@
     margin: 0 0 0 -15px;
 }
 .text-size-11{
-    font-size: 11px;
+    font-size: 1.5rem;
 }
 
 .fund-btn {  
@@ -28,7 +28,7 @@
     background-color: #FFFFFF;  
     border: 0px none; 
     /* font-family: "宋体";   */
-    font-size: 15px;  
+    font-size: 1.5rem;  
     text-decoration:underline;
 }  
 .fund-btn:hover{  
