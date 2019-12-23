@@ -14,7 +14,6 @@ export class BuyComponentComponent implements OnInit {
   data: Array<HoldingDetails>;
   constructor(private http: HttpClient, private appController: AppController) {}
   param: Array<string>;
-
   ngOnInit() {
     this.param = new Array<string>();
     this.param[0] = "10000001";
