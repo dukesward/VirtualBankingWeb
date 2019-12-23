@@ -1,141 +1,145 @@
 <div class="welcomebarContainer ">
-  <div class="bgwelcome">
-    Welcome,&nbsp;TROY
-  </div>
+  <nz-skeleton [nzLoading]="loading" [nzActive]="true" [nzAvatar]="false">
+    <div class="bgwelcome">Welcome,&nbsp;{{ firstName }}</div>
 
-  <div>
-    Last sign on:&nbsp;Dec. 09, 2019 (6:30 AM ET)&nbsp;from computer.
-  </div>
+    <div>
+      Last sign on:&nbsp;Dec. 09, 2019 (6:30 AM ET)&nbsp;from computer.
+    </div>
+  </nz-skeleton>
 </div>
 <div class="account-body">
   <div class="account">
-    <nz-collapse>
-      <nz-collapse-panel
-        *ngFor="let panel of panels"
-        [nzHeader]="panel.name"
-        [nzActive]="panel.active"
-        [nzDisabled]="panel.disabled"
-        [nzExtra]="panel.rightheader"
-      >
-        <div class="checking-1">
-          <div class="checking-detail">
-            <div class="checking-oh">
-              <div class="checking-fl blue-bold ">Checking - 7888 ></div>
-              <div class="checking-operate checking-oh">
-                <div class="checking-operate-2">Add Funds</div>
-                <div class="checking-operate-1">Pay a Bill</div>
-                <div class="checking-operate-1">Transfer</div>
-              </div>
-            </div>
-            <div class="checking-oh">
-              <div class="checking-fl wd3">
-                <div>
-                  Avaliable Now
-                  <i
-                    nz-tooltip
-                    nz-icon
-                    nzTooltipPlacement="topCenter"
-                    nzTooltipTitle="Avaliable Now"
-                    nzType="question-circle"
-                  ></i>
+    <nz-skeleton [nzLoading]="loading" [nzActive]="true" [nzAvatar]="false">
+      <nz-collapse>
+        <nz-collapse-panel
+          *ngFor="let panel of panels"
+          [nzHeader]="panel.name"
+          [nzActive]="panel.active"
+          [nzDisabled]="panel.disabled"
+          [nzExtra]="panel.rightheader"
+        >
+          <div class="checking-1">
+            <div class="checking-detail">
+              <div class="checking-oh">
+                <div class="checking-fl blue-bold ">Checking - 7888 ></div>
+                <div class="checking-operate checking-oh">
+                  <div class="checking-operate-2">Add Funds</div>
+                  <div class="checking-operate-1">Pay a Bill</div>
+                  <div class="checking-operate-1">Transfer</div>
                 </div>
-                <div class="amount1">$8,107.39</div>
               </div>
-              <div class="checking-fl wd3">
-                <div>
-                  On Deposit
-                  <i
-                    nz-tooltip
-                    nz-icon
-                    nzTooltipPlacement="topCenter"
-                    nzTooltipTitle="On Deposit"
-                    nzType="question-circle"
-                  ></i>
+              <div class="checking-oh">
+                <div class="checking-fl wd3">
+                  <div>
+                    Avaliable Now
+                    <i
+                      nz-tooltip
+                      nz-icon
+                      nzTooltipPlacement="topCenter"
+                      nzTooltipTitle="Avaliable Now"
+                      nzType="question-circle"
+                    ></i>
+                  </div>
+                  <div class="amount1">$8,107.39</div>
                 </div>
-                <div class="amount2">$8,107.39</div>
+                <div class="checking-fl wd3">
+                  <div>
+                    On Deposit
+                    <i
+                      nz-tooltip
+                      nz-icon
+                      nzTooltipPlacement="topCenter"
+                      nzTooltipTitle="On Deposit"
+                      nzType="question-circle"
+                    ></i>
+                  </div>
+                  <div class="amount2">$8,107.39</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="checking-2">
-          <div>Move your paycheck to your account</div>
-          <div class="paycheck checking-oh">
-            <div class="checking-dollar checking-fl">
-              <i nz-icon nzType="dollar" nzTheme="outline"></i>
-            </div>
-            <div class="paycheck-desc checking-fl">
-              <div>Setup Direct Deposit</div>
-              <div>Quick. Easy. Convenient</div>
-            </div>
-            <div class="checking-btn">
-              <button nz-button nzType="primary">Get Started</button>
+          <div class="checking-2">
+            <div>Move your paycheck to your account</div>
+            <div class="paycheck checking-oh">
+              <div class="checking-dollar checking-fl">
+                <i nz-icon nzType="dollar" nzTheme="outline"></i>
+              </div>
+              <div class="paycheck-desc checking-fl">
+                <div>Setup Direct Deposit</div>
+                <div>Quick. Easy. Convenient</div>
+              </div>
+              <div class="checking-btn">
+                <button nz-button nzType="primary">Get Started</button>
+              </div>
             </div>
           </div>
-        </div>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </nz-collapse-panel>
+      </nz-collapse>
 
-    <nz-collapse>
-      <nz-collapse-panel
-        *ngFor="let panel of savingpanels"
-        [nzHeader]="panel.name"
-        [nzActive]="panel.active"
-        [nzDisabled]="panel.disabled"
-        [nzExtra]="panel.rightheader"
-      >
-        <div class="checking-1">
-          <div class="checking-detail">
-            <div class="checking-oh">
-              <div class="checking-fl blue-bold ">Saving - 7662 ></div>
-              <div class="checking-operate checking-oh">
-                <div class="checking-operate-2">Add Funds</div>
-                <div class="checking-operate-1">Pay a Bill</div>
-                <div class="checking-operate-1">Transfer</div>
-              </div>
-            </div>
-            <div class="checking-oh">
-              <div class="checking-fl wd3">
-                <div>
-                  Current Balance
-                  <i
-                    nz-tooltip
-                    nz-icon
-                    nzTooltipPlacement="topCenter"
-                    nzTooltipTitle="Current Balance"
-                    nzType="question-circle"
-                  ></i>
+      <nz-collapse>
+        <nz-collapse-panel
+          *ngFor="let panel of savingpanels"
+          [nzHeader]="panel.name"
+          [nzActive]="panel.active"
+          [nzDisabled]="panel.disabled"
+          [nzExtra]="panel.rightheader"
+        >
+          <div class="checking-1">
+            <div class="checking-detail">
+              <div class="checking-oh">
+                <div class="checking-fl blue-bold ">Saving - 7662 ></div>
+                <div class="checking-operate checking-oh">
+                  <div class="checking-operate-2">Add Funds</div>
+                  <div class="checking-operate-1">Pay a Bill</div>
+                  <div class="checking-operate-1">Transfer</div>
                 </div>
-                <div class="amount1">$8,107.39</div>
               </div>
-              <div class="checking-fl wd3">
-                <div>
-                  On Deposit
-                  <i
-                    nz-tooltip
-                    nz-icon
-                    nzTooltipPlacement="topCenter"
-                    nzTooltipTitle="On Deposit"
-                    nzType="question-circle"
-                  ></i>
+              <div class="checking-oh">
+                <div class="checking-fl wd3">
+                  <div>
+                    Current Balance
+                    <i
+                      nz-tooltip
+                      nz-icon
+                      nzTooltipPlacement="topCenter"
+                      nzTooltipTitle="Current Balance"
+                      nzType="question-circle"
+                    ></i>
+                  </div>
+                  <div class="amount1">$8,107.39</div>
                 </div>
-                <div class="amount2">$8,107.39</div>
+                <div class="checking-fl wd3">
+                  <div>
+                    On Deposit
+                    <i
+                      nz-tooltip
+                      nz-icon
+                      nzTooltipPlacement="topCenter"
+                      nzTooltipTitle="On Deposit"
+                      nzType="question-circle"
+                    ></i>
+                  </div>
+                  <div class="amount2">$8,107.39</div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </nz-collapse-panel>
-    </nz-collapse>
+        </nz-collapse-panel>
+      </nz-collapse>
+    </nz-skeleton>
   </div>
 
   <div class="ad">
-    <div class="ad1">
-      <div class="ad1_title">Simplify Your Savings</div>
-      <div class="ad1_img"><img src="../../assets/images/HP417_M.jpg" /></div>
-      <div class="ad1_desc">
-        Easy to access and simple to manage, a Citi Savings Account could be
-        right for you.
+    <nz-skeleton [nzLoading]="loading" [nzActive]="true" [nzAvatar]="false">
+      <div class="ad1">
+        <div class="ad1_title">Simplify Your Savings</div>
+        <div class="ad1_img"><img src="../../assets/images/HP417_M.jpg" /></div>
+        <div class="ad1_desc">
+          Easy to access and simple to manage, a Citi Savings Account could be
+          right for you.
+        </div>
+        <div><button nz-button nzType="primary">Learn More</button></div>
       </div>
-      <div><button nz-button nzType="primary">Learn More</button></div>
-    </div>
+    </nz-skeleton>
   </div>
 </div>

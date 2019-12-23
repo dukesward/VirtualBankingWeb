@@ -14,6 +14,7 @@ import { NzCollapseModule } from "ng-zorro-antd/collapse";
 import { NzIconModule } from "ng-zorro-antd/icon";
 import { NzButtonModule } from "ng-zorro-antd";
 import { NzToolTipModule } from "ng-zorro-antd/tooltip";
+import { NzSkeletonModule } from "ng-zorro-antd/skeleton";
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -32,7 +33,8 @@ import { NzToolTipModule } from "ng-zorro-antd/tooltip";
     NzCollapseModule,
     NzIconModule,
     NzButtonModule,
-    NzToolTipModule
+    NzToolTipModule,
+    NzSkeletonModule
   ]
 })
 export class DashboardModule {}
