@@ -140,8 +140,8 @@ export class FunddetailComponent implements OnInit {
           this.funds.push(element);
         }
         let flag = false;
-        for (var i = 0; i < this.companys.length; i++) {
-          if (this.companys[i].code != element.fundHouse.code) {
+        for (let i = 0; i < this.companys.length; i++) {
+          if (this.companys[i].code !== element.fundHouse.code) {
             flag = true;
           } else {
             flag = false;
