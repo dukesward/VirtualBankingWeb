@@ -1,15 +1,15 @@
 <hr>
 <div class="funddetail-body text-size-11">
   <div class="fund-desc">
-    <p>其他基金</p>
+    <p>Other Fund</p>
   </div>
 
   <div class="form-group">
-    <label class="col-sm-2 control-label">基金公司：</label>
+    <label class="col-sm-2 control-label"> Company：</label>
     <div class="col-sm-10">
       <select #select class="form-control text-size-11" id="fund-company" name="funds"
         (change)='changeType(select.value)'>
-        <option>请选择基金公司</option>
+        <option>please choose fund company...</option>
         <option *ngFor="let datadetail of companys" value="{{datadetail.code}}">
           {{datadetail.name}}
         </option>
@@ -18,11 +18,11 @@
   </div>
 
   <div class="form-group">
-    <label class="col-sm-2 control-label">基金类别：</label>
+    <label class="col-sm-2 control-label"> Type：</label>
     <div class="col-sm-10">
       <select #selectType class="form-control text-size-11" id="fund-type" name="fundtypes"
         (change)='selectFund(selectType.value)'>
-        <option>请选择基金类别</option>
+        <option>please choose fund type...</option>
         <option *ngFor="let data of filtertypes" value="{{data.code}}">{{data.fundType}}</option>
       </select>
     </div>
@@ -46,23 +46,23 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×
         </button>
         <h4 class="modal-title" id="myModalLabel">
-          申购信息
+          Purchase info
         </h4>
       </div>
       <div class="modal-body">
 
         <div class="row">
-          <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">信托类别:</label>
+          <label for="firstname" class="col-sm-offset-2 col-sm-2 control-label">Category:</label>
           <div class="col-sm-6">
             <select class="form-control" disabled>
-              <option selected>台湾特定金钱信托</option>
+              <option selected>Taiwan specific money trust</option>
               <option>2</option>
               <option>3</option>
             </select>
           </div>
         </div>
         <div class="row">
-          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">基金名称:</label>
+          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Name:</label>
           <div class="col-sm-6 default-value bug-fund-value bug-fund-value" *ngIf="modalFund!=''">
             {{modalFund.fundName}}
           </div>
@@ -71,25 +71,25 @@
           </div>
         </div>
         <div class="row">
-          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">单位净值:</label>
+          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Unit Worth:</label>
           <div class="col-sm-6 default-value bug-fund-value">
-            USD {{FundOriginalPrice}} (参考价)
+            USD {{FundOriginalPrice}} (reference)
           </div>
         </div>
         <div class="row">
-          <label class="col-sm-offset-2 col-sm-2 control-label">存到:</label>
+          <label class="col-sm-offset-2 col-sm-2 control-label">Save to:</label>
           <div class="col-sm-6 default-value bug-fund-value">
-            基金：{{fundaccountNo}}
+            Fund：{{fundaccountNo}}
           </div>
         </div>
         <div class="row">
-          <label class="col-sm-offset-2 col-sm-2 control-label">最低申购金额:</label>
+          <label class="col-sm-offset-2 col-sm-2 control-label">Min amount:</label>
           <div class="col-sm-6 default-value bug-fund-value">
             TWD 30,000.00
           </div>
         </div>
         <div class="row">
-          <label class="col-sm-offset-2 col-sm-2 control-label">申购金额:</label>
+          <label class="col-sm-offset-2 col-sm-2 control-label">Purchase price:</label>
           <div class="col-sm-1">
             <input type="text" class="form-control" placeholder="TWD" disabled>
           </div>
@@ -108,9 +108,9 @@
           </div> -->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
         <button type="button" class="btn btn-primary" data-dismiss="modal" data-toggle="modal"
-          data-target="#confirmationModal" (click)="submitBuyQuantity()">提交</button>
+          data-target="#confirmationModal" (click)="submitBuyQuantity()">submit</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
@@ -125,12 +125,12 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
         </button>
         <h4 class="modal-title" id="myModalLabel">
-          确认申购
+          confirm
         </h4>
       </div>
       <div class="modal-body">
         <div class="row">
-          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">基金名称:</label>
+          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Fund name:</label>
           <div class="col-sm-6 default-value bug-fund-value" *ngIf="transaction!=undefined">
             {{transaction.fund.fundName}}
           </div>
@@ -140,7 +140,7 @@
         </div>
 
         <div class="row">
-          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">参考单价:</label>
+          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Price:</label>
           <div class="col-sm-6 default-value bug-fund-value" *ngIf="transaction!=undefined">
             USD {{transaction.originalPrice}}
           </div>
@@ -149,16 +149,16 @@
           </div>
         </div>
         <div class="row">
-          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">账号:</label>
+          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Account:</label>
           <div class="col-sm-6 default-value bug-fund-value" *ngIf="transaction!=undefined">
-            一般活存：{{transaction.accountNo}}
+            {{transaction.accountNo}}
           </div>
           <div class="col-sm-6 default-value bug-fund-value" *ngIf="transaction==undefined">
 
           </div>
         </div>
         <div class="row">
-          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">申购金额:</label>
+          <label for="lastname" class="col-sm-offset-2 col-sm-2 control-label">Amount:</label>
           <div class="col-sm-6 default-value bug-fund-value" *ngIf="transaction!=undefined">
             TWD {{quantity}}
           </div>
@@ -168,8 +168,8 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-        <button type="button" class="btn btn-primary" (click)="confirmBugFund()">确认</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+        <button type="button" class="btn btn-primary" (click)="confirmBugFund()">done</button>
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
