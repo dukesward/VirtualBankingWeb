@@ -1,0 +1,87 @@
+{
+	"responseCode": 0,
+	"data": [
+		{
+			"orderReferenceNumber": 1,
+			"customerNo": "10000001",
+			"accountNo": "200000001",
+			"quantity": 2000,
+			"originalPrice": 3.5,
+			"lastModifiedTime": "2019-01-02",
+			"fund": {
+				"code": "TPFMB",
+				"fundCurrency": "USD",
+				"fundName": "FRANKLIN MUTUAL BEACON FUND(USD) -A (0828)",
+				"fundType": "EQUITY",
+				"unitPrice": "3.5",
+				"riskLevel": "5",
+				"fundHouse": {
+					"code": "TSF",
+					"name": "FRANKLIN TEMPLETON GLOBAL ADVISORS"
+				}
+			}
+		},
+		{
+			"orderReferenceNumber": 2,
+			"customerNo": "10000001",
+			"accountNo": "200000001",
+			"quantity": 4000,
+			"originalPrice": 3.5,
+			"lastModifiedTime": "2019-01-02",
+			"fund": {
+				"code": "TPFMB",
+				"fundCurrency": "USD",
+				"fundName": "FRANKLIN MUTUAL BEACON FUND(USD) -A (0828)",
+				"fundType": "EQUITY",
+				"unitPrice": "3.5",
+				"riskLevel": "5",
+				"fundHouse": {
+					"code": "TSF",
+					"name": "FRANKLIN TEMPLETON GLOBAL ADVISORS"
+				}
+			}
+		},
+		{
+			"orderReferenceNumber": 3,
+			"customerNo": "10000001",
+			"accountNo": "200000001",
+			"quantity": 2000,
+			"originalPrice": 3.5,
+			"lastModifiedTime": "2019-01-02",
+			"fund": {
+				"code": "TPFMB",
+				"fundCurrency": "USD",
+				"fundName": "FRANKLIN MUTUAL BEACON FUND(USD) -A (0828)",
+				"fundType": "EQUITY",
+				"unitPrice": "3.5",
+				"riskLevel": "5",
+				"fundHouse": {
+					"code": "TSF",
+					"name": "FRANKLIN TEMPLETON GLOBAL ADVISORS"
+				}
+			}
+		},
+		{
+			"orderReferenceNumber": 4,
+			"customerNo": "10000001",
+			"accountNo": "200000001",
+			"quantity": 2000,
+			"originalPrice": 3.5,
+			"lastModifiedTime": "2019-01-02",
+			"fund": {
+				"code": "TPFMB",
+				"fundCurrency": "USD",
+				"fundName": "FRANKLIN MUTUAL BEACON FUND(USD) -A (0828)",
+				"fundType": "EQUITY",
+				"unitPrice": "3.5",
+				"riskLevel": "5",
+				"fundHouse": {
+					"code": "TSF",
+					"name": "FRANKLIN TEMPLETON GLOBAL ADVISORS"
+				}
+			}
+		}
+	],
+	"errorCode": null,
+	"errorMsg": null
+}
