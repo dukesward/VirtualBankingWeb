@@ -1,7 +1,8 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { AppController } from "../services/app.controller.service";
 import { HttpHeaders } from "@angular/common/http";
 import { AppStore } from "../services/app.store.service";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: "app-account-summary",
@@ -11,20 +12,39 @@ import { AppStore } from "../services/app.store.service";
 export class AccountSummaryComponent implements OnInit {
   constructor(
     private appController: AppController,
-    private appStore: AppStore
+    private appStore: AppStore,
+    private activatedRoute: ActivatedRoute
   ) {}
-
+  @Input() firstName: String;
+  savingList: any;
+  checkingList: any;
+  creditList: any;
   ngOnInit() {
+    this.activatedRoute.url.subscribe(params => {
+      this.getProfile();
+      this.getAccounts();
+    });
+  }
+
+  loading: boolean = true;
+  getProfile() {
     const clientId = this.appStore.getValue("clientId");
+
     const headers = new HttpHeaders({
       customerId: clientId
     });
     this.appController.get("app_module", "profile", null, headers).subscribe(
       data => {
+        this.firstName = data.firstName;
         console.log("profile: ", data);
+        this.loading = false;
       },
       error => {}
     );
+  }
+
+  getAccounts() {
+    const clientId = this.appStore.getValue("clientId");
     const accountsHeaders = new HttpHeaders({
       clientId: clientId
     });
@@ -37,7 +57,6 @@ export class AccountSummaryComponent implements OnInit {
         error => {}
       );
   }
-
   panels = [
     {
       active: true,
