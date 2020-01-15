@@ -23,6 +23,7 @@ import { FooterComponent } from "./footer/footer.component";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { NzMessageModule } from "ng-zorro-antd/message";
 
+
 registerLocaleData(en);
 
 @NgModule({
@@ -50,4 +51,4 @@ registerLocaleData(en);
   providers: [{ provide: NZ_I18N, useValue: en_US }],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

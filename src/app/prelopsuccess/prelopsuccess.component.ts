@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+declare var globalOfferDetail;
+
 @Component({
   selector: 'app-prelopsuccess',
   templateUrl: './prelopsuccess.component.html',
@@ -9,7 +11,10 @@ export class PrelopsuccessComponent implements OnInit {
 
   constructor() { }
 
+  offerDetail: any
+
   ngOnInit() {
+    this.offerDetail = globalOfferDetail;
   }
 
 }
