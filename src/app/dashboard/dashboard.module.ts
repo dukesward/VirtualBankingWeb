@@ -15,6 +15,20 @@ import { NzIconModule } from "ng-zorro-antd/icon";
 import { NzButtonModule } from "ng-zorro-antd";
 import { NzToolTipModule } from "ng-zorro-antd/tooltip";
 import { NzSkeletonModule } from "ng-zorro-antd/skeleton";
+import { Routes, RouterModule } from '@angular/router';
+
+const routes: Routes = [{
+  path: "", redirectTo: "prelophome", pathMatch: "full"
+}, {
+  path: "prelophome", component: PrelophomeComponent
+}, {
+  path: "prelophome/prelopinput", component: PrelopinputComponent
+}, {
+  path: "prelophome/prelopconfirm", component: PrelopconfirmComponent
+}, {
+  path: "prelophome/prelopsuccess", component: PrelopsuccessComponent
+}];
+
 @NgModule({
   declarations: [
     DashboardComponent,
@@ -27,6 +41,7 @@ import { NzSkeletonModule } from "ng-zorro-antd/skeleton";
     PrelopsuccessComponent
   ],
   imports: [
+    RouterModule.forChild(routes),
     CommonModule,
     NzMenuModule,
     DashboardRoutingModule,
@@ -37,4 +52,4 @@ import { NzSkeletonModule } from "ng-zorro-antd/skeleton";
     NzSkeletonModule
   ]
 })
-export class DashboardModule {}
+export class DashboardModule { }

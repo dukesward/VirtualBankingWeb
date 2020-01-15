@@ -3,11 +3,14 @@ import { Router } from '@angular/router';
 
 import { HttpClient } from "@angular/common/http";
 
+declare var globalOfferDetail;
+
 @Component({
   selector: 'app-prelophome',
   templateUrl: './prelophome.component.html',
   styleUrls: ['./prelophome.component.scss']
 })
+
 export class PrelophomeComponent implements OnInit {
 
   constructor(
@@ -17,15 +20,16 @@ export class PrelophomeComponent implements OnInit {
   offerDetail: any
 
   ngOnInit() {
-    this.http.get("https://ac001157-930f-4da7-bae7-6c3472cf08a7.mock.pstmn.io/customer/offer")
+    this.http.get("http://13.125.249.61:8885/prelop/getOfferDetails?offerId=ABC")
       .subscribe(res => {
         this.offerDetail = res;
+        globalOfferDetail = res;
         console.log(this.offerDetail);
       })
   }
 
   getThisLoan() {
-    this.router.navigateByUrl('/prelophome/prelopinput');
+    this.router.navigate(['/prelophome/prelopinput'], { skipLocationChange: true });
   }
 
 }
