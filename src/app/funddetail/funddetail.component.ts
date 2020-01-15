@@ -94,39 +94,49 @@ export class FunddetailComponent implements OnInit {
       }
       },
       error=>{
+        console.log("Get mock resp buy.");
+        this.getMockRespBuy();
         console.log("buy error....");
       }
     );
   }
-  // showList() {
-  //   throw new Error("Method not implemented.");
-  // }
+
+  getMockRespSearch(){
+    this.http.get('http://localhost:4200/assets/resp/search.json').subscribe((res: any) => {
+      
+      this.dataList = res.data;
+      this.dataList.forEach(element => {
+        if (this.companys.length == 0) {
+          this.companys.push(element.fundHouse);
+          this.funds.push(element);
+        }
+        let flag = false;
+        for (let i = 0; i < this.companys.length; i++) {
+          if (this.companys[i].code !== element.fundHouse.code) {
+            flag = true;
+          } else {
+            flag = false;
+          }
+        }
+        if (flag) {
+          this.companys.push(element.fundHouse);
+          this.funds.push(element);
+        }
+      });
+    });
+  }
+
+  getMockRespBuy(){
+this.http.get('http://localhost:4200/assets/resp/buy.json').subscribe((res: any) => {
+  console.log("rep",res);
+  if (res.responseCode == 0) {
+    this.router.navigateByUrl('/holdings');
+  }
+    });
+  }
 
   getSearchResp() {
 
-    // this.http.get('http://localhost:8880/private/v1/investments/mutualFunds/search').subscribe((res: SearchResp) => {
-    //   this.dataList = res.data;
-    //   console.log("search==>", res.data);
-    //   //const companys = [];
-    //   this.dataList.forEach(element => {
-    //     if (this.companys.length == 0) {
-    //       this.companys.push(element.fundHouse);
-    //       this.funds.push(element);
-    //     }
-    //     let flag = false;
-    //     for (var i = 0; i < this.companys.length; i++) {
-    //       if (this.companys[i].code != element.fundHouse.code) {
-    //         flag = true;
-    //       } else {
-    //         flag = false;
-    //       }
-    //     }
-    //     if (flag) {
-    //       this.companys.push(element.fundHouse);
-    //       this.funds.push(element);
-    //     }
-    //   });
-    // });
     console.log('companys==>', this.companys);
 
     this.appController.get("app_module","mutualFundSearch").subscribe(
@@ -154,6 +164,8 @@ export class FunddetailComponent implements OnInit {
       });
       },
       error=>{
+        console.log("Get mock resp search.");
+        this.getMockRespSearch();
         console.log("search error...");
       }
     );
