@@ -18,6 +18,10 @@ export class AccountSummaryComponent implements OnInit {
   savingList: any;
   checkingList: any;
   creditList: any;
+  saving_current: any;
+  saving_ondeposit: any;
+  checking_ondeposit: any;
+  checking_current: any;
   ngOnInit() {
     this.activatedRoute.url.subscribe(params => {
       this.getProfile();
@@ -55,6 +59,10 @@ export class AccountSummaryComponent implements OnInit {
           console.log("accounts: ", data);
           this.panels[0].rightheader =
             "Total On Deposit $ " + `${data.checkingAccount.availableBalance}`;
+            this.saving_current = data.savingsAccount.currentBalance;
+            this.saving_ondeposit = data.savingsAccount.availableBalance;
+            this.checking_current = data.checkingAccount.currentBalance;
+            this.checking_ondeposit = data.checkingAccount.availableBalance;
         },
         error => {}
       );
