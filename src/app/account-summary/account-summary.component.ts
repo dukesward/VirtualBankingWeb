@@ -3,7 +3,6 @@ import { AppController } from "../services/app.controller.service";
 import { HttpHeaders } from "@angular/common/http";
 import { AppStore } from "../services/app.store.service";
 import { ActivatedRoute } from "@angular/router";
-
 @Component({
   selector: "app-account-summary",
   templateUrl: "./account-summary.component.html",
@@ -29,9 +28,9 @@ export class AccountSummaryComponent implements OnInit {
   loading: boolean = true;
   getProfile() {
     const clientId = this.appStore.getValue("clientId");
-
     const headers = new HttpHeaders({
-      customerId: clientId
+      customerId: clientId,
+      timeout: `${8000}`
     });
     this.appController.get("app_module", "profile", null, headers).subscribe(
       data => {
@@ -46,13 +45,16 @@ export class AccountSummaryComponent implements OnInit {
   getAccounts() {
     const clientId = this.appStore.getValue("clientId");
     const accountsHeaders = new HttpHeaders({
-      clientId: clientId
+      clientId: clientId,
+      timeout: `${8000}`
     });
     this.appController
       .get("app_module", "accounts", null, accountsHeaders)
       .subscribe(
         data => {
           console.log("accounts: ", data);
+          this.panels[0].rightheader =
+            "Total On Deposit $ " + `${data.checkingAccount.availableBalance}`;
         },
         error => {}
       );

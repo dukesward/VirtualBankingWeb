@@ -10,7 +10,7 @@ import {
   NzButtonModule
 } from "ng-zorro-antd";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { registerLocaleData } from "@angular/common";
 import en from "@angular/common/locales/en";
@@ -22,7 +22,7 @@ import { HeaderComponent } from "./header/header.component";
 import { FooterComponent } from "./footer/footer.component";
 import { DashboardModule } from "./dashboard/dashboard.module";
 import { NzMessageModule } from "ng-zorro-antd/message";
-
+import { TimeoutInterceptor, DEFAULT_TIMEOUT } from "./timeout.interceptor";
 
 registerLocaleData(en);
 
@@ -48,7 +48,12 @@ registerLocaleData(en);
     DashboardModule,
     NzMessageModule
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [
+    [{ provide: NZ_I18N, useValue: en_US }],
+    [{ provide: HTTP_INTERCEPTORS, useClass: TimeoutInterceptor, multi: true }],
+    [{ provide: DEFAULT_TIMEOUT, useValue: 30000 }]
+  ],
+
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
