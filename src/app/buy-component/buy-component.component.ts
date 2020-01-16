@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { HoldingResp } from "src/model/holding/HoldingResp";
 import { HoldingDetails } from "src/model/holding/HoldingDetails";
 import { AppController } from "../services/app.controller.service";
@@ -21,8 +21,11 @@ export class BuyComponentComponent implements OnInit {
   }
 
   getHoldingResp() {
+    const header = new HttpHeaders({
+      timeout: `${8000}`
+    });
     this.appController
-      .get("app_module", "mutualFundHoldings", null, null, this.param)
+      .get("app_module", "mutualFundHoldings", null, header, this.param)
       .subscribe(
         resp => {
           console.log("data==>", resp);
@@ -35,10 +38,12 @@ export class BuyComponentComponent implements OnInit {
       );
   }
 
-  getMockRespHolding(){
-    this.http.get("http://localhost:4200/assets/resp/holdings.json").subscribe((resp:any)=>{
-      console.log("Get mock resp holding");
-      this.data=resp.data;
-    });
+  getMockRespHolding() {
+    this.http
+      .get("http://localhost:4200/assets/resp/holdings.json")
+      .subscribe((resp: any) => {
+        console.log("Get mock resp holding");
+        this.data = resp.data;
+      });
   }
 }
