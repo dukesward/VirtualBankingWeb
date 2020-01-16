@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     private appStore: AppStore
   ) {
     if (!this.appStore.getValue("clientId")) {
-      //this.router.navigateByUrl("/");
+      this.router.navigateByUrl("/");
     }
   }
   title = "virtual-bank-web";
