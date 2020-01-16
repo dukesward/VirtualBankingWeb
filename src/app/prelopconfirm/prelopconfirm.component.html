@@ -1,73 +1,88 @@
 <div>
-    <div id="lopHeader"
+  <!-- <div id="lopHeader"
         style="width: 100%; background: linear-gradient(180deg, rgba(0, 182, 240, 1) 0%, rgba(0, 84, 152, 1) 100%); padding: 0.5rem 0; z-index: 1001; width: 40%; margin: 0 auto;">
         <img class="logo" src="../../../../../../assets/images/Citi_Registered_Logo_3x.png" style="padding: 1rem;">
+    </div> -->
+  <div
+    id="lopBody"
+    style="z-index: 1000; font-size: 1.3rem; color: #999; width: 35%; margin: 0 auto;"
+  >
+    <div
+      style="text-align: center; padding-top: 2rem; font-size: 2rem; line-height: 2rem; color: #7897BC;"
+    >
+      Confirm and Book
     </div>
-    <div id="lopBody" style="z-index: 1000; font-size: 1.3rem; color: #999; width: 35%; margin: 0 auto;">
-        <div style="text-align: center; padding-top: 1rem; font-size: 2rem; line-height: 2rem; color: #7897BC;">
-            Confirm and Book
-        </div>
-        <div style="padding: 2rem 2.5rem 0 2.5rem;">
-            <hr style="width: 25%; border: none; height: 5px; background-color: rgba(0, 84, 152, 1); margin: 0 auto;" />
-        </div>
-        <div style="padding: 2rem 2.5rem; font-size: 1.2rem; text-align: center;">
-            Please make sure all details are correct. Once you are sure, please complete the booking.
-        </div>
-        <div style="padding: 1rem 2.5rem 1rem 2.5rem;">
-            <div style="font-size: 1rem;">
-                Loan Amount
-            </div>
-            <div style="padding: 0.2rem 0; color: #002A54;">
-                S$ {{offerDetail.loanAmount}}
-            </div>
-            <div style="font-size: 1rem;">
-                Booked on your Citi Ready Credit Account
-            </div>
-            <div style="color: #002A54;">
-                {{offerDetail.cardNumber}}
-            </div>
-        </div>
-        <div style="padding: 1rem 2.5rem 1rem 2.5rem; background-color: #eee;">
-            <div style="font-size: 1rem;">
-                Monthly Repayment
-            </div>
-            <div style="color: #002A54;">
-                S$ {{offerDetail.userField7}} at {{offerDetail.userField4}}% p.a. for 9 Months
-            </div>
-            <div style="padding: 1rem 0; font-size: 1rem;">
-                <div><a href="">V</a> &nbsp;Show Effective Interest Rate</div>
-            </div>
-        </div>
-        <div style="padding: 1rem 2.5rem 1rem 2.5rem;">
-            <div style="font-size: 1rem;">
-                Purpose of Loan
-            </div>
-            <div style="color: #002A54;">
-                Holiday
-            </div>
-        </div>
-        <div style="padding: 1rem 2.5rem 1rem 2.5rem; background-color: #eee;">
-            <div style="font-size: 1rem;">
-                Pay To
-            </div>
-            <div style="color: #002A54;">
-                Bank's Account ABBank - An Binh Bank Vietnam ABBank Hochiminh Branch 8736
-            </div>
-        </div>
-        <div style="padding: 1rem 2.5rem 1rem 2.5rem; font-size: 1rem;">
-            <a href="javascript:void(0)">Edit Information &gt;</a>
-        </div>
-        <div style="padding: 0 2.5rem 1rem 2.5rem; font-size: 1rem;">
-            <a href="javascript:void(0)">Download Amoritization Schedule (PDF) &gt;</a>
-        </div>
+    <div style="padding: 2rem 2.5rem 0 2.5rem;">
+      <hr
+        style="width: 25%; border: none; height: 5px; background-color: rgba(0, 84, 152, 1); margin: 0 auto;"
+      />
     </div>
-    <div style=" height: 100%; padding: 1rem 2.5rem; width: 25%; margin: 0 auto;">
-        <div
-            style="background-color: rgba(0, 84, 152, 1); margin-top: 1rem; height: 3.5rem; border-radius: 0.5rem; text-align: center; cursor: pointer;">
-            <div style="top: 50%; transform: translateY(50%); color: white; font-weight: bold; letter-spacing: 0.1rem;"
-                (click)="complete() ">
-                Complete the booking
-            </div>
-        </div>
+    <div style="padding: 2rem 2.5rem; font-size: 1.2rem; text-align: center;">
+      Please make sure all details are correct. Once you are sure, please
+      complete the booking.
     </div>
+    <div style="padding: 1rem 2.5rem 1rem 2.5rem;">
+      <div style="font-size: 1rem;">
+        Loan Amount
+      </div>
+      <div style="padding: 0.2rem 0; color: #002A54;">
+        S$ {{ offerDetail.loanAmount }}
+      </div>
+      <div style="font-size: 1rem;">
+        Booked on your Citi Ready Credit Account
+      </div>
+      <div style="color: #002A54;">
+        {{ offerDetail.cardNumber }}
+      </div>
+    </div>
+    <div style="padding: 1rem 2.5rem 1rem 2.5rem; background-color: #eee;">
+      <div style="font-size: 1rem;">
+        Monthly Repayment
+      </div>
+      <div style="color: #002A54;">
+        S$ {{ offerDetail.userField7 }} at {{ offerDetail.userField4 }}% p.a.
+        for 9 Months
+      </div>
+      <div style="padding: 1rem 0; font-size: 1rem;">
+        <div><a href="">V</a> &nbsp;Show Effective Interest Rate</div>
+      </div>
+    </div>
+    <div style="padding: 1rem 2.5rem 1rem 2.5rem;">
+      <div style="font-size: 1rem;">
+        Purpose of Loan
+      </div>
+      <div style="color: #002A54;">
+        Holiday
+      </div>
+    </div>
+    <div style="padding: 1rem 2.5rem 1rem 2.5rem; background-color: #eee;">
+      <div style="font-size: 1rem;">
+        Pay To
+      </div>
+      <div style="color: #002A54;">
+        Bank's Account ABBank - An Binh Bank Vietnam ABBank Hochiminh Branch
+        8736
+      </div>
+    </div>
+    <div style="padding: 1rem 2.5rem 1rem 2.5rem; font-size: 1rem;">
+      <a href="javascript:void(0)">Edit Information &gt;</a>
+    </div>
+    <div style="padding: 0 2.5rem 1rem 2.5rem; font-size: 1rem;">
+      <a href="javascript:void(0)"
+        >Download Amoritization Schedule (PDF) &gt;</a
+      >
+    </div>
+  </div>
+  <div style=" height: 100%; padding: 1rem 2.5rem; width: 25%; margin: 0 auto;">
+    <div
+      style="background-color: rgba(0, 84, 152, 1); margin-top: 1rem; height: 3.5rem; border-radius: 0.5rem; text-align: center; cursor: pointer;"
+    >
+      <div
+        style="top: 50%; transform: translateY(50%); color: white; font-weight: bold; letter-spacing: 0.1rem;"
+        (click)="complete()"
+      >
+        Complete the booking
+      </div>
+    </div>
+  </div>
 </div>
